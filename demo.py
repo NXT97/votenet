@@ -15,7 +15,7 @@ import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', default='sunrgbd', help='Dataset: sunrgbd or scannet [default: sunrgbd]')
-parser.add_argument('--num_point', type=int, default=20000, help='Point Number [default: 20000]')
+parser.add_argument('--num_point', type=int, default=373435, help='Point Number [default: 20000]')
 FLAGS = parser.parse_args()
 
 import torch
@@ -81,7 +81,10 @@ if __name__=='__main__':
    
     # Load and preprocess input point cloud 
     net.eval() # set model to eval mode (for bn and dp)
-    point_cloud = read_ply(pc_path)
+    ############################################
+    point_cloud = np.load('bag_floor.npy')
+    ############################################
+    # point_cloud = read_ply(pc_path)
     pc = preprocess_point_cloud(point_cloud)
     print('Loaded point cloud data: %s'%(pc_path))
    
