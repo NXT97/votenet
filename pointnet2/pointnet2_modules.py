@@ -1,7 +1,4 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
-# 
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
 
 ''' Pointnet2 layers.
 Modified based on: https://github.com/erikwijmans/Pointnet2_PyTorch
@@ -181,7 +178,6 @@ class PointnetSAModuleVotes(nn.Module):
             ret_unique_cnt: bool = False
     ):
         super().__init__()
-
         self.npoint = npoint
         self.radius = radius
         self.nsample = nsample
